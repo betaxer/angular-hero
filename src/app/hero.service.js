@@ -47,6 +47,13 @@ var HeroService = (function () {
             .then(function (response) { return response.json().data; })
             .catch(this.handleError);
     };
+    HeroService.prototype.delete = function (id) {
+        var url = this.heroesUrl + "/" + id;
+        return this.http.delete(url, { headers: this.headers })
+            .toPromise()
+            .then(function () { return null; })
+            .catch(this.handleError);
+    };
     HeroService.prototype.handleError = function (error) {
         console.error('A error happened', error);
         return Promise.reject(error.message || error);
