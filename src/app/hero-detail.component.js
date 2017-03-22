@@ -34,6 +34,9 @@ var HeroDetailComponent = (function () {
     HeroDetailComponent.prototype.goBack = function () {
         this.location.back();
     };
+    HeroDetailComponent.prototype.save = function () {
+        this.heroService.update(this.hero);
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', hero_1.Hero)
@@ -41,7 +44,7 @@ var HeroDetailComponent = (function () {
     HeroDetailComponent = __decorate([
         core_1.Component({
             selector: 'my-hero-detail',
-            template: "\n        <div *ngIf=\"hero\">\n            <h2>{{hero.name}} details!</h2>\n            <div><label>id: </label>{{hero.id}}</div>\n            <div>\n                <label>name: </label>\n                <input [(ngModel)]=\"hero.name\" placeholder=\"name\"/>\n            </div>\n            <button (click)=\"goBack()\">Back</button>\n        </div>\n    ",
+            template: "\n        <div *ngIf=\"hero\">\n            <h2>{{hero.name}} details!</h2>\n            <div><label>id: </label>{{hero.id}}</div>\n            <div>\n                <label>name: </label>\n                <input [(ngModel)]=\"hero.name\" placeholder=\"name\"/>\n            </div>\n            <button (click)=\"save()\">Save</button>\n            <button (click)=\"goBack()\">Back</button>\n        </div>\n    ",
             styleUrls: ['./app/hero-detail.component.css'],
         }), 
         __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.ActivatedRoute, common_1.Location])
