@@ -15,7 +15,6 @@ var HeroesComponent = (function () {
     function HeroesComponent(heroService, router) {
         this.heroService = heroService;
         this.router = router;
-        this.title = 'Tour of Heroes';
     }
     HeroesComponent.prototype.getHeroes = function () {
         var _this = this;
